@@ -41,7 +41,7 @@ function DialogTrigger({ children, asChild, ...props }: React.HTMLAttributes<HTM
   const { onOpenChange } = React.useContext(DialogContext)
   const child = React.Children.only(children) as React.ReactElement
   if (asChild) {
-    return React.cloneElement(child, {
+    return React.cloneElement(child as React.ReactElement<Record<string, unknown>>, {
       ...props,
       onClick: (e: React.MouseEvent) => {
         onOpenChange(true)
