@@ -139,7 +139,7 @@ function CredentialDialog({ open, onClose, editing }: { open: boolean; onClose: 
   const analysis = password ? analyzePassword(password) : null
 
   const handleGenerate = () => {
-    const p = generatePassword({ length: 20, uppercase: true, lowercase: true, numbers: true, symbols: true })
+    const p = generatePassword({ length: 20, uppercase: true, lowercase: true, numbers: true, symbols: true, excludeAmbiguous: false })
     setPassword(p); setShowPass(true)
   }
 
